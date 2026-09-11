@@ -1,9 +1,10 @@
 import matplotlib.image as mpimg
-import numpy as np
+from transforms import grayscale
 
 img = mpimg.imread("images/original.jpg")
-print(img.shape)
-print(img.dtype)
-print(img.min())
-print(img.max())
-print(img[0,0])
+
+gray = grayscale(img)
+
+print(gray.dtype)
+print(gray.shape)
+print(gray[0,0])
