@@ -8,3 +8,5 @@ gray = grayscale(img)
 print(gray.dtype)
 print(gray.shape)
 print(gray[0,0])
+
+mpimg.imsave("images/grayscale.png", gray, cmap="gray")
