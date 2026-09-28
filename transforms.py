@@ -13,3 +13,9 @@ def box_blur(gray):
     windows = sliding_window_view(gray, (3, 3))
     blurred = windows.mean(axis=(2,3))
     return blurred.astype(np.uint8)
+
+def resize(img, new_h, new_w):
+    old_h, old_w = img.shape[0], img.shape[1]
+    row_idx = np.arange(new_h) * old_h // new_h
+    col_idx = np.arange(new_w) * old_w // new_w
+    return img[row_idx][:, col_idx]
